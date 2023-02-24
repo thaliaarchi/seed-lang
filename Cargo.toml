@@ -1,0 +1,14 @@
+[package]
+name = "seed-lang"
+version = "0.1.0"
+authors = ["Thalia Archibald"]
+edition = "2021"
+description = "A converter for the Seed programming language"
+repository = "https://github.com/thaliaarchi/seed-lang"
+license = "GPL-3.0-or-later"
+keywords = ["seed", "mersenne", "random"]
+categories = ["algorithms"]
+
+[dependencies]
+rand_mt = "4.2.1"
+rug = "1.19.1"
