@@ -56,9 +56,9 @@ impl Seed {
 
     fn next_f64(&mut self) -> f64 {
         // https://github.com/python/cpython/blob/9f3ecd1aa3566947648a053bd9716ed67dd9a718/Modules/_randommodule.c#L158-L182
-        let a = self.mt.next_u32() >> 5;
-        let b = self.mt.next_u32() >> 6;
-        (a as f64 * 67108864.0 + b as f64) * (1.0 / 9007199254740992.0)
+        let a = self.mt.next_u32() as u64 >> 5;
+        let b = self.mt.next_u32() as u64 >> 6;
+        ((a << 26) | b) as f64 * (1.0 / (1u64 << 53) as f64)
     }
 }
 
